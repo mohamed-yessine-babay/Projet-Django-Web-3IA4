@@ -1,0 +1,3 @@
+<h1>Liste des utilisateurs</h1>
+<p><a href="{% url 'entreprises:utilisateur-ajouter' %}">Ajouter un utilisateur</a></p>
+<ul>{% for utilisateur in utilisateurs %}<li><a href="{% url 'entreprises:utilisateur-detail' utilisateur.pk %}">{{ utilisateur }}</a></li>{% empty %}<li>Aucun utilisateur.</li>{% endfor %}</ul>

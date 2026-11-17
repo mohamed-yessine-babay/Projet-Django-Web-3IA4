@@ -1,0 +1,5 @@
+<h1>{% if object %}Modifier{% else %}Ajouter{% endif %} une entreprise</h1>
+<form method="post">
+{% csrf_token %}{{ form.as_p }}
+<button type="submit">Enregistrer</button>
+</form>

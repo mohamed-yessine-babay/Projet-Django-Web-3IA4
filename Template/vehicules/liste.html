@@ -1,0 +1,3 @@
+<h1>Liste des vehicules</h1>
+<p><a href="{% url 'vehicules:ajouter' %}">Ajouter un vehicule</a></p>
+<ul>{% for vehicule in vehicules %}<li><a href="{% url 'vehicules:detail' vehicule.pk %}">{{ vehicule }}</a></li>{% empty %}<li>Aucun vehicule.</li>{% endfor %}</ul>

@@ -1,0 +1,14 @@
+{% with expedition=expedition|default:object %}
+<h1>{{ expedition.reference }}</h1>
+<p>Depart: {{ expedition.ville_depart }}</p>
+<p>Arrivee: {{ expedition.ville_arrive }}</p>
+<p>Poids: {{ expedition.poids_kg }} kg</p>
+<p>Date souhaitee: {{ expedition.date_souhaite }}</p>
+<p>Description: {{ expedition.description }}</p>
+<p>Statut: {{ expedition.get_statut_display }}</p>
+<p>Entreprise: {{ expedition.entreprise }}</p>
+<h2>Offres</h2>
+<ul>
+  {% for offre in expedition.offres.all %}<li>{{ offre }}</li>{% empty %}<li>Aucune offre.</li>{% endfor %}
+</ul>
+{% endwith %}
