@@ -2,5 +2,8 @@
   "workbench.colorCustomizations": {
     "statusBar.noFolderBackground": "#032F03",
     "statusBar.noFolderForeground": "#EFFEEF"
+  },
+  "chat.tools.terminal.autoApprove": {
+    ".\\.venv\\Scripts\\python.exe": true
   }
 }
