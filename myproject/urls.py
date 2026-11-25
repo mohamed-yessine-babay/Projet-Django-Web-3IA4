@@ -19,9 +19,14 @@ from django.urls import include, path
 
 from EntrepriseApp.views import RegistrationView
 from .views import homePage, homePageWithName
+from rest_framework.routers import DefaultRouter
+from ExpeditionApp.api_views import ExpeditionViewSet
 
+router = DefaultRouter()
+router.register('expeditions',ExpeditionViewSet)
 urlpatterns = [
     path("", homePage),
+    path('api/', include(router.urls)),
     path("users/register/", RegistrationView.as_view(), name="register"),
     path("users/", include("django.contrib.auth.urls")),
     path("home/<str:name>", homePageWithName),
