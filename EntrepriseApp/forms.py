@@ -10,6 +10,20 @@ class UtilisateurCreationForm(UserCreationForm):
         fields = ("username", "email", "telephone", "role")
 
 
+class RegistrationUserForm(UserCreationForm):
+    role = forms.ChoiceField(
+        choices=(
+            ("chargeur", "Chargeur"),
+            ("transporteur", "Transporteur"),
+        ),
+        initial="chargeur",
+    )
+
+    class Meta(UserCreationForm.Meta):
+        model = Utilisateur
+        fields = ("username", "email", "telephone", "role")
+
+
 class UtilisateurForm(forms.ModelForm):
     class Meta:
         model = Utilisateur

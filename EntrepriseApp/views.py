@@ -1,7 +1,7 @@
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, DeleteView, DetailView, ListView, UpdateView
 
-from .forms import EntrepriseForm, UtilisateurCreationForm, UtilisateurForm
+from .forms import EntrepriseForm, RegistrationUserForm, UtilisateurCreationForm, UtilisateurForm
 from .models import Entreprise, Utilisateur
 
 
@@ -65,3 +65,10 @@ class UtilisateurDeleteView(DeleteView):
     model = Utilisateur
     template_name = "entreprises/utilisateur_confirmer_suppression.html"
     success_url = reverse_lazy("entreprises:utilisateur-liste")
+
+
+class RegistrationView(CreateView):
+    model = Utilisateur
+    form_class = RegistrationUserForm
+    template_name = "registration/inscription.html"
+    success_url = reverse_lazy("login")

@@ -1,2 +1,6 @@
+{% extends "base.html" %}
+{% block title %}{% if object %}Modifier{% else %}Ajouter{% endif %} une offre | CargoFlow{% endblock %}
+{% block content %}
 <h1>{% if object %}Modifier{% else %}Ajouter{% endif %} une offre</h1>
 <form method="post">{% csrf_token %}{{ form.as_p }}<button type="submit">Enregistrer</button></form>
+{% endblock %}

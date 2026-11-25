@@ -1,9 +1,13 @@
-<h1>Liste des expeditions</h1>
-<p><a href="{% url 'expeditions:ajouter' %}">Ajouter une expedition</a></p>
+{% extends "base.html" %}
+{% block title %}Expéditions | CargoFlow{% endblock %}
+{% block content %}
+<h1>Liste des expéditions</h1>
+<p class="actions"><a class="button" href="{% url 'expeditions:ajouter' %}">Ajouter une expédition</a></p>
 <ul>
   {% for expedition in liste %}
     <li><a href="{% url 'expeditions:detail-reference' expedition.reference %}">{{ expedition.reference }}</a></li>
   {% empty %}
-    <li>Aucune expedition disponible pour le moment.</li>
+    <li>Aucune expédition disponible pour le moment.</li>
   {% endfor %}
 </ul>
+{% endblock %}

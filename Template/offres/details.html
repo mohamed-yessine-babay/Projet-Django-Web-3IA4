@@ -1,5 +1,9 @@
+{% extends "base.html" %}
+{% block title %}{{ object }} | CargoFlow{% endblock %}
+{% block content %}
 <h1>{{ object }}</h1>
 <p>Delai: {{ object.delai_jours }} jour(s)</p>
 <p>Prix: {{ object.prix }}</p>
 <p>Statut: {{ object.get_statut_display }}</p>
-<p><a href="{% url 'offres:modifier' object.pk %}">Modifier</a> | <a href="{% url 'offres:supprimer' object.pk %}">Supprimer</a></p>
+<p class="actions"><a class="button" href="{% url 'offres:modifier' object.pk %}">Modifier</a><a class="button button-danger" href="{% url 'offres:supprimer' object.pk %}">Supprimer</a></p>
+{% endblock %}

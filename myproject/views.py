@@ -1,7 +1,7 @@
-from django.http import HttpResponse
+from django.shortcuts import render
 
 def homePage(request):
-  return HttpResponse("welcome to home!")
+  return render(request, "home.html")
 
 def homePageWithName(request, name):
-  return HttpResponse(f"Welcome to y project, {name}")
+  return render(request, "home.html", {"name": name})

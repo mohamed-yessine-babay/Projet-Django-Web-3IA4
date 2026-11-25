@@ -1,6 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Supprimer l'expédition | CargoFlow{% endblock %}
+{% block content %}
 <h1>Supprimer {{ object }} ?</h1>
+<p>Cette action est définitive.</p>
 <form method="post">
   {% csrf_token %}
-  <button type="submit">Confirmer</button>
-  <a href="{% url 'expeditions:liste' %}">Annuler</a>
+  <div class="actions"><button class="button-danger" type="submit">Confirmer la suppression</button>
+  <a class="button button-secondary" href="{% url 'expeditions:liste' %}">Annuler</a></div>
 </form>
+{% endblock %}

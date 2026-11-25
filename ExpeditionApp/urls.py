@@ -1,4 +1,5 @@
 from django.urls import path
+import django.contrib.auth.urls
 
 from .views import (
     ExpeditionCreateView,
@@ -12,6 +13,7 @@ from .views import (
 app_name = "expeditions"
 
 urlpatterns = [
+    
     path("", ExpeditionListView.as_view(), name="liste"),
     path("ajouter/", ExpeditionCreateView.as_view(), name="ajouter"),
     path("<int:pk>/", ExpeditionDetailView.as_view(), name="detail"),

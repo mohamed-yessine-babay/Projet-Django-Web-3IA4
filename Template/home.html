@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}Accueil | CargoFlow{% endblock %}
+
+{% block content %}
+<section class="home-intro">
+  <p class="eyebrow">Plateforme de gestion logistique</p>
+  <h1>{% if name %}Bienvenue, {{ name }}{% else %}Bienvenue sur CargoFlow{% endif %}</h1>
+  <p>Retrouvez au même endroit vos expéditions, offres, véhicules et entreprises.</p>
+</section>
+
+<section class="dashboard-grid" aria-label="Accès rapides">
+  <a class="dashboard-card" href="{% url 'expeditions:liste' %}">
+    <span class="dashboard-label">Opérations</span>
+    <strong>Expéditions</strong>
+    <span>Consulter et gérer les demandes de transport.</span>
+  </a>
+  <a class="dashboard-card" href="{% url 'offres:liste' %}">
+    <span class="dashboard-label">Tarification</span>
+    <strong>Offres</strong>
+    <span>Suivre les propositions et leurs statuts.</span>
+  </a>
+  <a class="dashboard-card" href="{% url 'vehicules:liste' %}">
+    <span class="dashboard-label">Flotte</span>
+    <strong>Véhicules</strong>
+    <span>Retrouver les véhicules et leur disponibilité.</span>
+  </a>
+  <a class="dashboard-card" href="{% url 'entreprises:liste' %}">
+    <span class="dashboard-label">Réseau</span>
+    <strong>Entreprises</strong>
+    <span>Accéder aux entreprises enregistrées.</span>
+  </a>
+</section>
+{% endblock %}

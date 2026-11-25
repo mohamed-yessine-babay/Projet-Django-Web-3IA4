@@ -1,3 +1,7 @@
-<h1>Liste des vehicules</h1>
-<p><a href="{% url 'vehicules:ajouter' %}">Ajouter un vehicule</a></p>
-<ul>{% for vehicule in vehicules %}<li><a href="{% url 'vehicules:detail' vehicule.pk %}">{{ vehicule }}</a></li>{% empty %}<li>Aucun vehicule.</li>{% endfor %}</ul>
+{% extends "base.html" %}
+{% block title %}Véhicules | CargoFlow{% endblock %}
+{% block content %}
+<h1>Liste des véhicules</h1>
+<p class="actions"><a class="button" href="{% url 'vehicules:ajouter' %}">Ajouter un véhicule</a></p>
+<ul>{% for vehicule in vehicules %}<li><a href="{% url 'vehicules:detail' vehicule.pk %}">{{ vehicule }}</a></li>{% empty %}<li>Aucun véhicule.</li>{% endfor %}</ul>
+{% endblock %}

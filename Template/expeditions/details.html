@@ -1,3 +1,6 @@
+{% extends "base.html" %}
+{% block title %}Détail de l'expédition | CargoFlow{% endblock %}
+{% block content %}
 {% with expedition=expedition|default:object %}
 <h1>{{ expedition.reference }}</h1>
 <p>Depart: {{ expedition.ville_depart }}</p>
@@ -12,3 +15,4 @@
   {% for offre in expedition.offres.all %}<li>{{ offre }}</li>{% empty %}<li>Aucune offre.</li>{% endfor %}
 </ul>
 {% endwith %}
+{% endblock %}

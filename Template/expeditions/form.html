@@ -1,6 +1,10 @@
-<h1>{% if expedition %}Modifier{% else %}Ajouter{% endif %} une expedition</h1>
+{% extends "base.html" %}
+{% block title %}{% if expedition %}Modifier{% else %}Ajouter{% endif %} une expédition | CargoFlow{% endblock %}
+{% block content %}
+<h1>{% if expedition %}Modifier{% else %}Ajouter{% endif %} une expédition</h1>
 <form method="post">
   {% csrf_token %}
   {{ form.as_p }}
   <button type="submit">Enregistrer</button>
 </form>
+{% endblock %}

@@ -1,7 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Entreprises | CargoFlow{% endblock %}
+{% block content %}
 <h1>Liste des entreprises</h1>
-<p><a href="{% url 'entreprises:ajouter' %}">Ajouter une entreprise</a></p>
+<p class="actions"><a class="button" href="{% url 'entreprises:ajouter' %}">Ajouter une entreprise</a></p>
 <ul>
 {% for entreprise in entreprises %}
   <li><a href="{% url 'entreprises:detail' entreprise.pk %}">{{ entreprise }}</a></li>
 {% empty %}<li>Aucune entreprise.</li>{% endfor %}
 </ul>
+{% endblock %}

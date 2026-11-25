@@ -1,3 +1,7 @@
+{% extends "base.html" %}
+{% block title %}Offres | CargoFlow{% endblock %}
+{% block content %}
 <h1>Liste des offres</h1>
-<p><a href="{% url 'offres:ajouter' %}">Ajouter une offre</a></p>
+<p class="actions"><a class="button" href="{% url 'offres:ajouter' %}">Ajouter une offre</a></p>
 <ul>{% for offre in offres %}<li><a href="{% url 'offres:detail' offre.pk %}">{{ offre }}</a></li>{% empty %}<li>Aucune offre.</li>{% endfor %}</ul>
+{% endblock %}
